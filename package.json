@@ -1,6 +1,6 @@
 {
   "name": "@pohodnik/babel-preset",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "description": "base babel preset for pohodnik's",
   "main": "index.js",
   "repository": {
@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/pohodnik/babel-preset#readme",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   }
 }
