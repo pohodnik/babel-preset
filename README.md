@@ -7,8 +7,7 @@ webpack.config
 ```
 ...
 		presets: [
-			// Extends base presets
-			require('@pohodnik/babel-preset')
+			'@pohodnik/babel-preset'
             ...
         ]
 ...
