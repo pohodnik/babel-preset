@@ -22,6 +22,9 @@
     "url": "https://github.com/pohodnik/babel-preset/issues"
   },
   "homepage": "https://github.com/pohodnik/babel-preset#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@pohodnik/eslint-config": "^1.2.2"
   },
