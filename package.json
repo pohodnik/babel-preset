@@ -1,6 +1,6 @@
 {
   "name": "@pohodnik/babel-preset",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "base babel preset for pohodnik's",
   "main": "index.js",
   "repository": {
