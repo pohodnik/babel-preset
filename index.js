@@ -2,10 +2,6 @@
 const use = pkg => require(pkg).default;
 
 module.exports = () => ({
-    presets: [
-        [use('@babel/preset-env'), { modules: false, useBuiltIns: 'usage', corejs: 3 }],
-    ],
-
     plugins: [
         [use('@babel/plugin-proposal-class-properties'), { loose: true }],
         [use('@babel/plugin-transform-runtime')],
@@ -15,16 +11,8 @@ module.exports = () => ({
         [use('@babel/plugin-transform-regenerator'), { async: false }]
     ],
     env: {
-        test: {
-            presets: [
-                [use('@babel/preset-env'), { modules: 'commonjs', targets: { node: 'current', esmodules: false } }]
-            ]
-        },
-        development: {
-            plugins: []
-        },
         production: {
-            presets: [use('minify'), { removeConsole: true, removeDebugger: true }]
+            presets: [['babel-preset-minify', { removeConsole: true, removeDebugger: true }]]
         }
     }
 });
