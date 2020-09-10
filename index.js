@@ -15,7 +15,7 @@ module.exports = function () {
         env: {
             test: {
                 presets: [
-                    ['jest', ['@babel/preset-env', { modules: 'commonjs', targets: { node: 'current', esmodules: false } }]]
+                    ['@babel/preset-env', { modules: 'commonjs', targets: { node: 'current', esmodules: false } }]
                 ]
             },
             development: {
