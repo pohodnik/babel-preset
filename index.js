@@ -1,34 +1,29 @@
-/* eslint-disable global-require */
-
 module.exports = function () {
     return {
-
         presets: [
-            [
-                require('@babel/preset-env').default,
-                {
-                    modules: false,
-                    useBuiltIns: 'usage',
-                    corejs: 3
-                },
-            ],
+            ['@babel/preset-env', { modules: false, useBuiltIns: 'usage', corejs: 3 }],
         ],
 
         plugins: [
-            [require('@babel/plugin-proposal-class-properties').default, { loose: true }],
-            [
-                require('@babel/plugin-transform-runtime').default,
-                {
-                    corejs: false,
-                    helpers: false,
-                    regenerator: true,
-                    useESModules: false,
-                },
-            ],
-            require('@babel/plugin-proposal-export-default-from').default,
-            require('@babel/plugin-syntax-dynamic-import').default,
-            require('@babel/plugin-proposal-optional-chaining').default,
-            [require('@babel/plugin-transform-regenerator').default, { async: false }]
+            ['@babel/plugin-proposal-class-properties', { loose: true }],
+            ['@babel/plugin-transform-runtime'],
+            ['@babel/plugin-proposal-export-default-from'],
+            ['@babel/plugin-syntax-dynamic-import'],
+            ['@babel/plugin-proposal-optional-chaining'],
+            ['@babel/plugin-transform-regenerator', { async: false }]
         ],
+        env: {
+            test: {
+                presets: [
+                    ['jest', ['@babel/preset-env', { modules: 'commonjs', targets: { node: 'current', esmodules: false } }]]
+                ]
+            },
+            development: {
+                plugins: []
+            },
+            production: {
+                presets: ['minify', { removeConsole: true, removeDebugger: true }]
+            }
+        }
     };
 };
