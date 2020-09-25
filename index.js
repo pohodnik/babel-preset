@@ -13,6 +13,10 @@ module.exports = () => ({
     env: {
         production: {
             presets: [['babel-preset-minify', { removeConsole: true, removeDebugger: true }]]
+        },
+        test: {
+            presets: [['@babel/preset-env', { targets: { node: 'current' }}]],
+            plugins: ['transform-es2015-modules-commonjs']
         }
     }
 });
